@@ -13,3 +13,8 @@ class CategorySerializer(serializers.ModelSerializer):
 			'active',
 		]
 		fields = "__all__"
+		extra_kwargs = {
+			"slug": {
+				"required": False
+			}
+		}
