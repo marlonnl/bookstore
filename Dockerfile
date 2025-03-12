@@ -39,7 +39,7 @@ RUN apt-get update \
         build-essential
 
 # install poetry - respects $POETRY_VERSION & $POETRY_HOME
-RUN pip install poetry
+RUN pip install poetry==1.8.0
 RUN poetry init
 
 # RUN curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
@@ -54,10 +54,10 @@ WORKDIR $PYSETUP_PATH
 COPY poetry.lock pyproject.toml ./
 
 # install runtime deps - uses $POETRY_VIRTUALENVS_IN_PROJECT internally
-RUN poetry install --no-dev
+# RUN poetry install --no-dev
 
 # quicker install as runtime deps are already installed
-RUN poetry install
+RUN poetry install 
 
 WORKDIR /app
 
