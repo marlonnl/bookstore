@@ -39,7 +39,7 @@ RUN apt-get update \
         build-essential
 
 # install poetry - respects $POETRY_VERSION & $POETRY_HOME
-RUN pip install poetry==1.8.0
+RUN pip install poetry
 RUN poetry init
 
 # RUN curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
