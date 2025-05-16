@@ -39,6 +39,8 @@ class TestOrderView(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
         order_data = json.loads(response.content)
+        # print(order_data)
+
         self.assertEqual(
             order_data["results"][0]["product"][0]["title"], self.product.title
         )
