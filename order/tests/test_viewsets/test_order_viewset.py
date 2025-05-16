@@ -54,9 +54,9 @@ class TestOrderView(APITestCase):
         )
 
     def test_create_order(self):
-        # user = UserFactory()
+        user = UserFactory()
         product = ProductFactory()
-        data = json.dumps({"products_id": [product.id], "user": self.user.id})
+        data = json.dumps({"products_id": [product.id], "user": user.id})
 
         # auth
         # token = Token.objects.get(user__username=self.user.username)
@@ -72,4 +72,4 @@ class TestOrderView(APITestCase):
 
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
-        created_order = Order.objects.get(user=self.user)
+        created_order = Order.objects.get(user=user)
