@@ -43,9 +43,11 @@ INSTALLED_APPS = [
     "product",
     "rest_framework",
     "rest_framework.authtoken",
+    "debug_toolbar",
 ]
 
 MIDDLEWARE = [
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -79,6 +81,13 @@ WSGI_APPLICATION = "bookstore.wsgi.application"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 STATIC_FILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+STORAGES = {
+    # ...
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
