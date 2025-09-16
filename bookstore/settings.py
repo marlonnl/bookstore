@@ -26,9 +26,6 @@ SECRET_KEY = "django-insecure-jp&pp&m%8wf@pci5f=6^ruoad(@!---l%dw*391)_+vrd=5nh=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-
 # Application definition
 
 INSTALLED_APPS = [
