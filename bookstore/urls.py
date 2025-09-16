@@ -13,3 +13,5 @@ urlpatterns = [
     path("update_server/", views.update, name="update"),
     path("hello/", views.hello_world, name="hello_world"),
 ]
+
+# testint
